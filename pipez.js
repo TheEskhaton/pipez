@@ -1,3 +1,5 @@
+/* jshint browser:true*/
+/* global define */
 (function(scope){
     'use strict';
     var noop = function(){};
@@ -15,20 +17,20 @@
                 afters.forEach(function(elem){ elem(evt);  });
             };
             
-        }
+        };
         
         self.before = function(fn){
             befores.push(fn);
             self.handler = getHandler();
 
             return self; 
-        }
+        };
         self.after = function(fn){
             afters.push(fn);
             self.handler = getHandler();
 
             return self;
-        }
+        };
         
         self.handler = getHandler();
         
