@@ -1,0 +1,11 @@
+<script src="pipez.js"></script>
+<div id="test">
+    Test div
+</div>    
+<script>
+    var pipe = new Pipez(function(evt){ console.log(evt, 'the event'); });
+    pipe.after(function(evt){ console.log(evt, 'after'); })
+        .before(function(evt){ console.log(evt, 'before'); });
+    document.getElementById('test').addEventListener('click',pipe.handler)
+</script>
+
